@@ -1,0 +1,7 @@
+.banner{
+    width: 900px;
+    margin: 40px auto;
+}
+.banner h3, p{
+    color: goldenrod;
+}

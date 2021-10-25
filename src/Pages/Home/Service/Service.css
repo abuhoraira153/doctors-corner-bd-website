@@ -1,0 +1,12 @@
+.service{
+    background-color: #EDEDED;
+    border-radius: 15px;
+    width: 500px;
+    margin: 0 auto;
+}
+.service img{
+    width: 100%;
+}
+.service p{
+    color: #212121;
+}
