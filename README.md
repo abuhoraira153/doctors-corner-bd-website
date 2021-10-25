@@ -1,6 +1,9 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<ul>
+<li>This Website is about a private clinic.</li>
+</ul>
 
 ## Available Scripts
 
