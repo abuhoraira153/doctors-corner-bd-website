@@ -11,6 +11,7 @@ import Footer from './Pages/Shared/Footer/Footer';
 import ContactUs from './Pages/ContactUs/ContactUs';
 import Gallery from './Pages/Gallery/Gallery';
 import Register from './Pages/Register/Register';
+import Services from './Pages/Home/Services/Services';
 
 
 function App() {
@@ -25,6 +26,9 @@ function App() {
           </Route>
           <Route exact path = "/home">
             <Home></Home>
+          </Route>
+          <Route path = "/services">
+            <Services></Services>
           </Route>
           <Route path = "/login">
             <Login></Login>

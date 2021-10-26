@@ -8,26 +8,26 @@ const ContactUs = () => {
             <div className="row my-5">
                 <div className="col-lg-7 col-12">
                  <form>
-                    <div class="mb-3">
-                        <label for="exampleInputName" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp"/>
+                    <div className="mb-3">
+                        <label htmlFor="exampleInputName" className="form-label">Name</label>
+                        <input type="text" className="form-control" id="exampleInputName" aria-describedby="emailHelp"/>
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputName" class="form-label">Phone Number</label>
-                        <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp"/>
+                    <div className="mb-3">
+                        <label htmlFor="exampleInputName" className="form-label">Phone Number</label>
+                        <input type="text" className="form-control" id="exampleInputName" aria-describedby="emailHelp"/>
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+                    <div className="mb-3">
+                        <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
+                        <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputSubject" class="form-label">Subject</label>
+                    <div className="mb-3">
+                        <label htmlFor="exampleInputSubject" className="form-label">Subject</label>
                         <br />
-                        {/* <input type="text" class="form-control" id="exampleInputSubject" aria-describedby="subjectHelp"/> */}
+                        {/* <input type="text" className="form-control" id="exampleInputSubject" aria-describedby="subjectHelp"/> */}
                         <textarea name="" id="" cols="20" rows="5"></textarea>
                     </div>
                     <hr />
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" className="btn btn-primary">Submit</button>
                  </form>
             </div>
             <div className="col-lg-4 col-12 bg-info quick-contact contact-text">

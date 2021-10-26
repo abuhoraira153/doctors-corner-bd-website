@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useHistory, useLocation } from 'react-router';
-import { Link } from 'react-router-dom';
 
 const Login = () => {
+    const {signInUsingGoogle} = useAuth()
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -13,9 +13,8 @@ const Login = () => {
     const location = useLocation()
     const history = useHistory()
     const redirect_uri = location.state?.from || '/';
-
     const auth = getAuth();
-    const {signInUsingGoogle, signInUsingGithub} = useAuth()
+
     const handleGoogleLogin = () => {
         signInUsingGoogle()
         .then(result => {
@@ -46,25 +45,7 @@ const Login = () => {
 
     const handleRegistration = e => {
         e.preventDefault()
-        // console.log(email, password)
-        if(password.length < 6){
-            setError("Password must be at least 6 charecters.")
-            return;
-        }
-        if(!/(?=.*[A-Z].*[A-Z])/.test(password)){
-            setError('PassWord should be 2 capital letters.');
-            return;
-        }
-        if(!/(?=.*[!@#$&*])/.test(password)){
-            setError('Password should be one special case letter.');
-            return;
-        }
-        // if(!/(?=.*[0-9].*[0-9])/.test(password)){
-        //     setError('Password should be two digits');
-        //     return;
-        // }
         isLogin ? processLogin(email, password):createNewUser(email, password);
-      
     }
     const processLogin = (email, password) => {
         signInWithEmailAndPassword(auth, email, password)
@@ -80,8 +61,6 @@ const Login = () => {
     const createNewUser = (email ,password) => {
         createUserWithEmailAndPassword(auth, email, password)
         .then(result => {
-            const user = result.user;
-            // console.log(user)
             setError('')
             setUserName()
         })
@@ -113,7 +92,6 @@ const Login = () => {
                     </div>
                 </div>
                 <div className="row mb-3">
-                    {/* <p className = "text-dark">New to Doctors Corner? <Link to = "/register">Create Account</Link></p> */}
                     <div className="col-sm-10 offset-sm-2">
                     <div className="form-check">
                         <input onChange = {toggleLogin} className="form-check-input" type="checkbox" id="gridCheck1"/>
@@ -128,11 +106,9 @@ const Login = () => {
             </form>
             <br />
             <div>----------------------------------or--------------------------------------</div>
+            <br />
             <button onClick = {handleGoogleLogin} className="btn btn-warning">Google Sign In</button>
             <br />
-            <div>----------------------------------or--------------------------------------</div>
-            <br />
-            <button onClick = {signInUsingGithub} className="btn btn-warning">Github Sign In</button>
         </div>
     );
 };

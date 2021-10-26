@@ -3,15 +3,15 @@ import Service from '../Service/Service';
 import './Services.css'
 
 const Services = () => {
-    const [services, setServies] = useState([])
+    const [services, setServices] = useState([])
     useEffect(()=>{
         fetch('doctors.json')
         .then(res=>res.json())
-        .then(data=>setServies(data))
+        .then(data=>setServices(data))
     },[])
     return (
         <div id = "services" className ="services">
-            <h1 className = "text-primary mb-5">Services</h1>
+            <h1 className = "text-primary mb-5">Our Services</h1>
             <div className = "service-container">
                 {
                     services.map(service => <Service

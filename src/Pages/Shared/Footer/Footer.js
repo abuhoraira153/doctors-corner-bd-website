@@ -9,7 +9,7 @@ const Footer = () => {
     return (
         <div className = "row footer mt-4">
             <div className="col-lg-6 copy-right">
-                <p className = "small mb-0 mt-1">&copy; Copy-right Abu Horaira</p>
+                <h3 className = "small mb-0 mt-1">&copy; Copy-right Abu Horaira</h3>
             </div>
             <div className="col-lg-6 d-flex">
                 <Link className = "lern-more" to = "/contactUs">For quick contact</Link>
